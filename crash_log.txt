@@ -1,0 +1,49 @@
+--------- beginning of main
+01-21 14:51:57.549 31149 31149 E ashmem  : Pinning is deprecated since Android Q. Please use trim or other methods.
+01-21 14:51:57.609 31149 31172 E ReactNativeJS: ReferenceError: Property 'StyleSheet' doesn't exist, js engine: hermes
+01-21 14:51:57.609 31149 31172 E ReactNativeJS: Invariant Violation: "TaskExplorer" has not been registered. This can happen if:
+01-21 14:51:57.609 31149 31172 E ReactNativeJS: * Metro (the local dev server) is run from the wrong folder. Check if Metro is running, stop it and restart it in the current project.
+01-21 14:51:57.609 31149 31172 E ReactNativeJS: * A module failed to load due to an error and `AppRegistry.registerComponent` wasn't called., js engine: hermes
+--------- beginning of crash
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: FATAL EXCEPTION: mqt_native_modules
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: Process: com.taskexplorer, PID: 31149
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: com.facebook.react.common.JavascriptException: ReferenceError: Property 'StyleSheet' doesn't exist, js engine: hermes, stack:
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: anonymous@1:647620
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: loadModuleImplementation@1:21300
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: guardedLoadModule@1:20824
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: metroRequire@1:20454
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: anonymous@1:647195
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: loadModuleImplementation@1:21300
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: guardedLoadModule@1:20824
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: metroRequire@1:20454
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: anonymous@1:646978
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: loadModuleImplementation@1:21300
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: guardedLoadModule@1:20824
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: metroRequire@1:20454
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: anonymous@1:27185
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: loadModuleImplementation@1:21300
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: guardedLoadModule@1:20781
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: metroRequire@1:20454
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: global@1:19982
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at com.facebook.react.modules.core.ExceptionsManagerModule.reportException(ExceptionsManagerModule.kt:52)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at java.lang.reflect.Method.invoke(Native Method)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at com.facebook.react.bridge.JavaMethodWrapper.invoke(JavaMethodWrapper.java:372)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at com.facebook.react.bridge.JavaModuleWrapper.invoke(JavaModuleWrapper.java:146)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at com.facebook.jni.NativeRunnable.run(Native Method)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at android.os.Handler.handleCallback(Handler.java:1070)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at android.os.Handler.dispatchMessage(Handler.java:125)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadHandler.dispatchMessage(MessageQueueThreadHandler.java:27)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at android.os.Looper.dispatchMessage(Looper.java:333)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at android.os.Looper.loopOnce(Looper.java:263)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at android.os.Looper.loop(Looper.java:367)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl.lambda$startNewBackgroundThread$2(MessageQueueThreadImpl.java:217)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at com.facebook.react.bridge.queue.MessageQueueThreadImpl$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+01-21 14:51:57.614 31149 31173 E AndroidRuntime: 	at java.lang.Thread.run(Thread.java:1563)
+--------- beginning of system
+01-21 14:51:57.657  1474  2747 E TransitionChain: Can't collect into a chain with no transition
+01-21 14:51:57.657  1474  2747 E TransitionChain: Can't collect into a chain with no transition
+01-21 14:51:58.663  1474  1968 E libbinder.IPCThreadState: Binder transaction failure. id: 47878234, cmd: BR_DEAD_REPLY (29189), error: -22 (Invalid argument)
+01-21 14:51:58.688   498   498 E BpTransactionCompletedListener: Failed to transact (-32)
+01-21 14:51:59.634   966   966 E libbinder.IPCThreadState: binder thread pool (1 threads) starved for 106 ms
+01-21 14:51:59.635   966  1031 E WifiHAL : Creating message to get cached scan results
