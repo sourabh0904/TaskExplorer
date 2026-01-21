@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 import { colors } from '../theme/colors';
+import { useTasks } from '../context/TasksContext';
 
 const DetailScreen = ({ route }) => {
-  const { task } = route.params;
-  const [status, setStatus] = useState(task.completed);
+  const { taskId } = route.params;
+  const { tasks, toggleTaskStatus } = useTasks();
+  
+  const task = tasks.find(t => t.id === taskId);
 
-  const toggleStatus = () => {
-    setStatus(!status);
-    // Note: Local state only for verify bonus req, persistence is separate
+  if (!task) return null;
+
+  const handleToggle = () => {
+    toggleTaskStatus(taskId);
   };
 
   return (
@@ -16,9 +20,9 @@ const DetailScreen = ({ route }) => {
       <View style={styles.card}>
         <View style={styles.header}>
            <Text style={styles.title}>{task.title}</Text>
-           <View style={[styles.badge, { backgroundColor: status ? colors.success + '20' : colors.secondary + '20' }]}>
-             <Text style={[styles.badgeText, { color: status ? colors.success : colors.secondary }]}>
-                {status ? 'COMPLETED' : 'INCOMPLETE'}
+           <View style={[styles.badge, { backgroundColor: task.completed ? colors.success + '20' : colors.secondary + '20' }]}>
+             <Text style={[styles.badgeText, { color: task.completed ? colors.success : colors.secondary }]}>
+                {task.completed ? 'COMPLETED' : 'INCOMPLETE'}
              </Text>
            </View>
         </View>
@@ -37,12 +41,12 @@ const DetailScreen = ({ route }) => {
       </View>
 
       <TouchableOpacity 
-        style={[styles.button, { backgroundColor: status ? colors.secondary : colors.primary }]} 
-        onPress={toggleStatus}
+        style={[styles.button, { backgroundColor: task.completed ? colors.secondary : colors.primary }]} 
+        onPress={handleToggle}
         activeOpacity={0.8}
       >
         <Text style={styles.buttonText}>
-          {status ? 'Mark as Incomplete' : 'Mark as Completed'}
+          {task.completed ? 'Mark as Incomplete' : 'Mark as Completed'}
         </Text>
       </TouchableOpacity>
     </ScrollView>
